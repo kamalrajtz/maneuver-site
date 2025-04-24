@@ -1,13 +1,24 @@
-// Functionality for Header - Sidebar Toggle
-
 document.addEventListener("DOMContentLoaded", function () {
     const toggleBtn = document.querySelector('[data-collapse-toggle="navbar-sticky"]');
     const navMenu = document.getElementById("navbar-sticky");
+    const navLinks = navMenu.querySelectorAll("a");
 
-    toggleBtn.addEventListener("click", () => {
+    // Toggle on button click
+    toggleBtn.addEventListener("click", function () {
         navMenu.classList.toggle("hidden");
     });
+
+    // Nav link click
+    navLinks.forEach(link => {
+        link.addEventListener("click", () => {
+            // Close menu on mobile/tablet
+            if (window.innerWidth < 1024) {
+                navMenu.classList.add("hidden");
+            }
+        });
+    });
 });
+
 
 
 $(document).ready(function () {
@@ -51,3 +62,4 @@ $(document).ready(function () {
         },
     });
 });
+
