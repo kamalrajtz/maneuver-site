@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movement Maneuver - Home</title>
+    <link href="./src/output.css" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montagu+Slab:opsz,wght@16..144,100..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+    <!-- Owl Carousel CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+
+    <!-- jQuery (Required for Owl Carousel) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+
+
+<style>
+    html {
+        font-family: "Montserrat", sans-serif;
+    }
+
+    .font-montserrat {
+        font-family: "Montserrat", sans-serif;
+    }
+
+    .font-montagu {
+        font-family: "Montagu Slab", serif;
+    }
+
+    .owl-carousel .item {
+        text-align: center;
+        padding: 15px;
+    }
+
+    .owl-carousel .item img {
+        width: 80%;
+    }
+
+    /* .owl-carousel .item img:hover {
+        border: 1px solid #47248E;
+    } */
+
+    .owl-nav {
+        position: absolute;
+        width: 100%;
+        display: flex;
+        column-gap: 1rem;
+        justify-content: end;
+        padding-inline: 3rem;
+        margin-top: 1rem;
+        pointer-events: none;
+    }
+
+    .owl-prev,
+    .owl-next {
+        padding: 10px 15px;
+        border-radius: 50%;
+        cursor: pointer;
+        pointer-events: all;
+        /* Ensures buttons remain clickable */
+        transition: 0.3s;
+    }
+
+    .owl-prev:hover,
+    .owl-next:hover {
+        background: rgba(0, 0, 0, 0.8);
+    }
+
+    .owl-nav.disabled {
+        display: flex !important;
+        /* Force show navigation buttons */
+        padding-inline: 3rem;
+    }
+
+    #owl-carousel2 .owl-nav {
+        position: absolute;
+        width: 100%;
+        display: flex;
+        column-gap: 1rem;
+        justify-content: space-between;
+        padding-inline: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        margin-top: 0rem;
+    }
+
+    @media(max-width: 767px) {
+        .owl-nav {
+            justify-content: center;
+        }
+
+        #owl-carousel2 .owl-nav {
+            padding-top: 1.5rem;
+        }
+    }
+</style>
+
+
+<body>
+
+    <!-- Navbar -->
+
+    <!-- Top Navbar (Desktop) -->
+    <nav class="sticky w-full z-20 top-0 start-0 bg-[#153d34] hidden md:block shadow-md">
+        <div class="max-w-screen-xl mx-auto p-2">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center gap-x-2">
+                    <img src="./assets/images/nav-time-icon.svg" alt="nav-time-icon">
+                    <a href="#0" class="text-white text-base"><span class="font-semibold">Working
+                            Hours:</span>
+                        09:00
+                        TO 01:00 & 4:00 To 8:00</a>
+                </div>
+
+                <div class="flex items-center gap-x-2">
+                    <img src="./assets/images/nav-mail-icon.svg" alt="nav-mail-icon">
+                    <a href="mailto:movementmaneuver@gmail.com" class="text-white text-base"><span
+                            class="font-semibold">Email:</span> movementmaneuver@gmail.com</a>
+                </div>
+
+                <div class="flex items-center gap-x-2">
+                    <img src="./assets/images/nav-phone-icon.svg" alt="nav-phone-icon">
+                    <a href="tel:+916381687325" class="text-white text-base"><span class="font-semibold">Contact:</span>
+                        (+91) 6381687325</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Bottom Navbar -->
+    <nav class="bg-white sticky w-full z-20 lg:top-10 top-0 start-0 shadow-md">
+        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+            <a href="./index.html" class="flex items-center space-x-3 rtl:space-x-reverse">
+                <img src="./assets/images/maneuver-logo.png" class="h-12" alt="maneuver-logo">
+                <span class="self-center text-xl font-semibold text-[#31aab1] whitespace-nowrap">Movement
+                    Maneuver</span>
+            </a>
+            <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+                <button type="button"
+                    class="hidden lg:block text-white bg-[#0e9aa7] hover:bg-[#65acb2] focus:ring-4 focus:outline-none focus:ring-[#0e9aa7a4] font-medium rounded-full text-sm px-4 py-2.5 text-center cursor-pointer transition-all ease-in-out duration-200">Book
+                    Appointment</button>
+                <button data-collapse-toggle="navbar-sticky" type="button"
+                    class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
+                    aria-controls="navbar-sticky" aria-expanded="false">
+                    <span class="sr-only">Open main menu</span>
+                    <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                        viewBox="0 0 17 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M1 1h15M1 7h15M1 13h15" />
+                    </svg>
+                </button>
+            </div>
+            <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
+                <ul
+                    class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white">
+                    <li>
+                        <a href="#"
+                            class="block py-2 px-3 text-white bg-[#0e9aa7] rounded-sm md:bg-transparent md:text-[#0e9aa7] md:p-0"
+                            aria-current="page">Home</a>
+                    </li>
+                    <li>
+                        <a href="#"
+                            class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-[#0e9aa7] transition-all ease-in-out duration-200 md:p-0">About
+                            Us</a>
+                    </li>
+                    <li>
+                        <a href="#"
+                            class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-[#0e9aa7] transition-all ease-in-out duration-200 md:p-0">Services</a>
+                    </li>
+                    <li>
+                        <a href="#"
+                            class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-[#0e9aa7] transition-all ease-in-out duration-200 md:p-0">Blog</a>
+                    </li>
+                    <li>
+                        <a href="#"
+                            class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-[#0e9aa7] transition-all ease-in-out duration-200 md:p-0">Testimonial</a>
+                    </li>
+                    <li>
+                        <a href="#"
+                            class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-[#0e9aa7] transition-all ease-in-out duration-200 md:p-0">Contact
+                            Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Section One -->
+
+    <div
+        class="container mx-auto bg-[url('/assets/images/maneuver-hero-bg.png')] bg-cover object-cover bg-no-repeat py-72 max-sm:py-16 flex flex-col justify-center">
+        <div class="flex flex-col items-center gap-y-6">
+            <h1 class="text-6xl font-bold text-white text-center max-sm:text-3xl">Recover. Rebuild. Revive <br
+                    class="max-sm:hidden">
+                Your Body</h1>
+            <h2 class="text-2xl font-medium text-white text-center max-sm:text-lg">"Expert physiotherapy care for pain
+                relief, mobility,
+                and strength</h2>
+            <div class="flex justify-center gap-x-6 max-sm:flex-col gap-y-2">
+                <button
+                    class="flex items-center justify-between gap-x-2 text-base font-medium bg-white text-[#0E9AA7] py-2.5 px-4 rounded-full border border-white hover:text-white hover:bg-transparent transition-all ease-in-out duration-200 cursor-pointer">
+                    Book Appointment
+                    <img src="./assets/images/white-right-arrow.svg" alt="white-right-arrow">
+                </button>
+                <button
+                    class="flex items-center justify-between gap-x-2 text-base font-medium bg-[#0E9AA7] text-white py-2.5 px-4 rounded-full border border-[#0E9AA7] hover:border-white hover:bg-transparent transition-all ease-in-out duration-200 cursor-pointer">
+                    Explore Services
+                    <img src="./assets/images/cyan-right-arrow.svg" alt="cyan-right-arrow">
+                </button>
+                <button
+                    class="flex items-center justify-between gap-x-2 text-base font-medium bg-white text-[#0E9AA7] py-2.5 px-4 rounded-full border border-white hover:text-white hover:bg-transparent transition-all ease-in-out duration-200 cursor-pointer">
+                    Book Training Session
+                    <img src="./assets/images/white-right-arrow.svg" alt="white-right-arrow">
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- End of Section One -->
+
+    <!-- Section Two -->
+
+    <div class="container mx-auto px-4 mt-28 max-sm:mt-10">
+        <div class="grid grid-cols-2 max-sm:grid-cols-1 gap-x-6 gap-y-8">
+            <div class="flex justify-center">
+                <img src="./assets/images/sec-two-img.png" class="w-10/12" alt="sec-two-img">
+            </div>
+            <div class="pr-52 max-sm:pr-0 max-lg:pr-0">
+                <span
+                    class="bg-[#DBF0F2] text-lg font-medium text-[#0E9AA7] py-2 px-4 rounded-full max-sm:text-center max-sm:block">About
+                    Us</span>
+
+                <h3 class="text-5xl font-bold text-black mt-8 max-sm:text-3xl max-sm:text-center">We Are The Best For
+                    <span class="text-[#0e9aa7]">Physiotherapy</span>
+                </h3>
+                <p class="text-base font-normal text-[#333333] mt-8 max-sm:text-center max-sm:mt-4">At Movement
+                    Maneuver, we believe that healing is
+                    more than just
+                    treatment—it's about understanding, support, and personalized
+                    care. Our expert physiotherapists are passionate about helping
+                    you move better, feel stronger, and live pain-free.</p>
+
+                <div class="border-dashed border border-black my-14 max-sm:my-8"></div>
+
+                <div class="flex flex-col gap-y-10">
+                    <div class="flex w-full">
+                        <div class="w-6/12">
+                            <div class="flex items-center gap-x-4">
+                                <img src="./assets/images/sec-two-icon1.png" class="h-13 w-fit" alt="sec-two-icon1">
+                                <span class="text-base font-semibold text-[#0E9AA7]">Nutrition Strategies</span>
+                            </div>
+                        </div>
+                        <div class="w-6/12">
+                            <div class="flex items-center gap-x-4">
+                                <img src="./assets/images/sec-two-icon2.png" class="h-13 w-fit" alt="sec-two-icon2">
+                                <span class="text-base font-semibold text-[#0E9AA7]">Be Pro Active</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex w-full">
+                        <div class="w-6/12">
+                            <div class="flex items-center gap-x-4">
+                                <img src="./assets/images/sec-two-icon3.png" class="h-13 w-fit" alt="sec-two-icon3">
+                                <span class="text-base font-semibold text-[#0E9AA7]">Workout Routines</span>
+                            </div>
+                        </div>
+                        <div class="w-6/12">
+                            <div class="flex items-center gap-x-4">
+                                <img src="./assets/images/sec-two-icon4.png" class="h-13 w-fit" alt="sec-two-icon4">
+                                <span class="text-base font-semibold text-[#0E9AA7]">Support & Motivation</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex justify-end mt-8 max-sm:justify-center">
+                    <button
+                        class="flex items-center justify-between gap-x-2 text-base font-medium bg-[#0E9AA7] text-white py-2.5 px-4 rounded-full border border-[#0E9AA7] hover:text-[#0E9AA7] hover:bg-transparent transition-all ease-in-out duration-200 cursor-pointer">
+                        Book Appointment
+                        <img src="./assets/images/phone-icon.svg" alt="phone-icon">
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- End of Section Two -->
+
+    <!-- Section Three -->
+
+    <div class="container mx-auto px-4 mt-6 lg:mt-28">
+        <div class="owl-carousel" id="owl-carousel1">
+            <div class="item flex justify-center" href="#0">
+                <img src="./assets/images/sec3-img-one.png" class="w-10/12" alt="sec-three-img1">
+            </div>
+            <div class="item flex justify-center mt-0 lg:mt-12" href="#0">
+                <img src="./assets/images/sec3-img-two.png" class="w-10/12" alt="sec-three-img2">
+            </div>
+            <div class="item flex justify-center" href="#0">
+                <img src="./assets/images/sec3-img-three.png" class="w-10/12" alt="sec-three-img3">
+            </div>
+            <div class="item flex justify-center mt-0 lg:mt-12" href="#0">
+                <img src="./assets/images/sec3-img-four.png" class="w-10/12" alt="sec-three-img4">
+            </div>
+            <div class="item flex justify-center" href="#0">
+                <img src="./assets/images/sec3-img-five.png" class="w-10/12" alt="sec-three-img5">
+            </div>
+        </div>
+    </div>
+
+    <!-- End of Section Three -->
+
+    <!-- Section Four -->
+
+    <div class="container mx-auto lg:px-16 mt-16 lg:mt-28">
+        <span
+            class="bg-[#DBF0F2] text-lg font-medium text-[#0E9AA7] py-2 px-4 rounded-full max-sm:text-center max-sm:block">About
+            Us</span>
+        <h3 class="text-5xl font-bold text-[#0e9aa7] mt-8 max-sm:text-3xl max-sm:text-center">We Provide<span
+                class="text-black"> The Best<br class="hidden lg:block"> Services</span>
+        </h3>
+        <div class="sm:grid grid-cols-1 md:grid-cols-3 lg:grid-cols-2 gap-x-6 mt-6 lg:mt-16">
+            <div class="p-6 px-12 lg:px-6">
+                <ul class="list-disc text-base lg:text-lg font-medium text-black space-y-6">
+                    <li>Techniques</li>
+                    <li>Craniosacral Therapy for migraine</li>
+                    <li>Instrument Assisted Soft Tissue Mobilization </li>
+                    <li>Static cupping</li>
+                    <li>Dynamic cupping</li>
+                    <li>Fire cupping</li>
+                    <li>Dry needling</li>
+                    <li>Kinesio Tapping</li>
+                    <li>Myofacial Release</li>
+                    <li>Trigger Release</li>
+                    <li>Advanced Exercise Programs</li>
+                    <li>IFT, US, IRR, Wax therapy etc....</li>
+                    <li>Fitness & Training</li>
+                </ul>
+            </div>
+            <div class="p-6 flex justify-center">
+                <img src="./assets/images/sec-four-img.png" class="w-10/12" alt="sec-four-img">
+            </div>
+        </div>
+    </div>
+
+    <!-- Section Five -->
+
+    <div class="container mx-auto px-6 mt-6 lg:mt-28">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <div class="flex justify-center">
+                <img src="./assets/images/sec-five-img.png" class="w-11/12 h-fit" alt="sec-five-img">
+            </div>
+            <div class="pl-0 lg:pl-20">
+                <h3 class="text-5xl font-bold text-black max-sm:text-3xl max-sm:text-center">Fitness & <span
+                        class="text-[#FF4500]">Strength</span> <br class="lg:block hidden">Training</h3>
+
+                <div class="flex flex-col gap-y-6 mt-8">
+                    <div class="flex flex-col gap-y-2">
+                        <div class="flex items-center gap-x-3">
+                            <img src="./assets/images/sec-five-icon1.png" class="h-8 w-fit" alt="sec-five-icon1">
+                            <span class="text-[22px] font-semibold text-[#1A1A1A]">Strength & Conditioning
+                                Specialist</span>
+                        </div>
+                        <p class="text-base font-normal text-[#333333]">Customized training programs to build strength,
+                            <br class="lg:block hidden">improve performance, and enhance
+                            endurance—<br class="lg:block hidden">
+                            tailored for all fitness levels.
+                        </p>
+                    </div>
+                    <div class="flex flex-col gap-y-2">
+                        <div class="flex items-center gap-x-3">
+                            <img src="./assets/images/sec-five-icon2.png" class="h-8 w-fit" alt="sec-five-icon2">
+                            <span class="text-[22px] font-semibold text-[#1A1A1A]">Holistic Health Coaching</span>
+                        </div>
+                        <p class="text-base font-normal text-[#333333]">Guidance on lifestyle, nutrition, mental<br
+                                class="lg:block hidden">
+                            wellness, and physical training for a<br class="lg:block hidden">
+                            balanced, healthier life.
+                        </p>
+                    </div>
+                    <div class="flex flex-col gap-y-2">
+                        <div class="flex items-center gap-x-3">
+                            <img src="./assets/images/sec-five-icon3.png" class="h-8 w-fit" alt="sec-five-icon3">
+                            <span class="text-[22px] font-semibold text-[#1A1A1A]">Bodybuilding Coaching</span>
+                        </div>
+                        <p class="text-base font-normal text-[#333333]">Train under an award-winning<br
+                                class="lg:block hidden">
+                            bodybuilder for sculpted physiques and<br class="lg:block hidden">
+                            competition prep.
+                        </p>
+                    </div>
+                </div>
+
+                <h3 class="text-4xl font-bold text-[#FF4500] text-center lg:text-left mt-6">Achievements</h3>
+
+                <div class="flex flex-col gap-y-4 mt-4">
+                    <div class="flex items-center gap-x-2">
+                        <img src="./assets/images/medal-icon1.png" class="h-8 w-fit" alt="medal-icon1">
+                        <span class="text-base font-medium text-[#333333]">2nd Place - Mr. Erode District Bodybuilding
+                            Competition.</span>
+                    </div>
+                    <div class="flex items-center gap-x-2">
+                        <img src="./assets/images/medal-icon2.png" class="h-8 w-fit" alt="medal-icon2">
+                        <span class="text-base font-medium text-[#333333]">4th Place - Mr. Karnataka StateBodybuilding
+                            Competition.</span>
+                    </div>
+                </div>
+
+                <div class="flex lg:justify-end justify-center pl-0 lg:pr-36 mt-4">
+                    <button
+                        class="flex items-center justify-between gap-x-2 text-base font-medium bg-[#0E9AA7] text-white py-2.5 px-4 rounded-full border border-[#0E9AA7] hover:text-[#0E9AA7] hover:bg-transparent transition-all ease-in-out duration-200 cursor-pointer">
+                        Book Appointment
+                        <img src="./assets/images/cyan-right-arrow.svg" alt="phone-icon">
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- End of Section Five -->
+
+    <!-- Section Six -->
+
+    <div class="container mx-auto lg:mt-28 mt-6">
+        <div class="bg-[#DBF0F2] grid grid-cols-1 lg:grid-cols-2 gap-x-10 gap-y-6 py-20 px-12">
+            <div class="flex flex-row gap-x-6 w-full">
+                <div class="w-6/12 relative overflow-hidden group rounded-xl">
+                    <img src="./assets/images/sec-six-img1.png"
+                        class="transition-all duration-500 transform hover:scale-105 cursor-pointer" alt="sec-six-img1">
+                </div>
+                <div class="w-6/12 relative overflow-hidden group rounded-xl">
+                    <img src="./assets/images/sec-six-img2.png"
+                        class="transition-all duration-500 transform hover:scale-105 cursor-pointer" alt="sec-six-img2">
+                </div>
+            </div>
+            <div class="pt-0 lg:pt-16 pr-0 lg:pr-36">
+                <span
+                    class="bg-white text-[#085C64] text-lg font-medium py-2 px-4 rounded-full max-sm:text-center max-sm:block">Solution
+                    To Your Pain</span>
+                <h3
+                    class="text-5xl font-bold text-[#0E9AA7] lg:leading-16 max-sm:text-3xl max-sm:text-center mt-6 lg:mt-8">
+                    We Proudly <span class="text-black">Give <br class="lg:block hidden">
+                        Quality Treatment</span></h3>
+                <p class="text-base font-normal text-[#333333] text-center lg:text-left mt-6 lg:mt-8">We understand that
+                    injuries and acute pain can happen
+                    <br class="lg:block hidden"> unexpectedly. Our
+                    emergency physiotherapy services are designed <br class="lg:block hidden"> to provide prompt and
+                    affective care to help you manage.
+                </p>
+
+                <div class="border-dashed border border-black my-14 max-sm:my-8"></div>
+
+                <div class="flex flex-col gap-y-8">
+                    <div class="flex gap-x-2 items-center">
+                        <img src="./assets/images/tick-icon.svg" class="h-6 w-fit" alt="tick-icon">
+                        <span class="text-base font-semibold text-[#085C64]">We understand that injuries.</span>
+                    </div>
+                    <div class="flex gap-x-2 items-center">
+                        <img src="./assets/images/tick-icon.svg" class="h-6 w-fit" alt="tick-icon">
+                        <span class="text-base font-semibold text-[#085C64]">Can happen unexpectedly Our
+                            emergency.</span>
+                    </div>
+                    <div class="flex gap-x-2 items-center">
+                        <img src="./assets/images/tick-icon.svg" class="h-6 w-fit" alt="tick-icon">
+                        <span class="text-base font-semibold text-[#085C64]">Stronger and safer.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- End of Section Six -->
+
+    <!-- Section Seven -->
+
+    <div class="container mx-auto mt-6 lg:mt-28">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-x-6">
+            <div class="relative flex max-sm:flex-col gap-y-6 justify-end max-sm:justify-center max-sm:px-4">
+                <img src="./assets/images/sec-seven-img1.png" class="w-8/12 max-sm:w-full" alt="sec-seven-img1">
+                <img src="./assets/images/sec-seven-img2.png"
+                    class="w-6/12 max-sm:w-full absolute top-80 left-[40rem] max-sm:static" alt="sec-seven-img2">
+            </div>
+            <div class="p-0 lg:pr-52">
+                <h3
+                    class="text-5xl font-bold text-black lg:leading-16 max-sm:text-3xl max-sm:text-center mt-6 lg:mt-20">
+                    Restore. Strengthen. <br class="lg:block hidden"><span class="text-[#0E9AA7]">Move Freely.</span>
+                </h3>
+                <p class="text-base font-normal text-[#333333] text-center lg:text-left mt-6 lg:mt-8">Expert
+                    physiotherapy to relieve pain, restore mobility, and help you live stronger every day.</p>
+                <div class="p-0 lg:pl-64">
+                    <div class="border-dashed border border-black my-14 max-sm:my-8 max-sm:mx-2"></div>
+
+                    <div class="flex flex-col gap-y-8 max-sm:px-6">
+                        <div class="flex gap-x-2 items-center">
+                            <img src="./assets/images/tick-icon.svg" class="h-6 w-fit" alt="tick-icon">
+                            <span class="text-base font-semibold text-[#085C64]">Personalized Treatment Plans</span>
+                        </div>
+                        <div class="flex gap-x-2 items-center">
+                            <img src="./assets/images/tick-icon.svg" class="h-6 w-fit" alt="tick-icon">
+                            <span class="text-base font-semibold text-[#085C64]">Advanced Rehab Techniques</span>
+                        </div>
+                        <div class="flex gap-x-2 items-center">
+                            <img src="./assets/images/tick-icon.svg" class="h-6 w-fit" alt="tick-icon">
+                            <span class="text-base font-semibold text-[#085C64]">Friendly & Certified Therapists</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- End of Section Seven -->
+
+    <!-- Section Eight -->
+
+    <div class="container mx-auto mt-6 lg:mt-28">
+        <div class="bg-[url('/assets/images/sec-eight-bg.png')] bg-cover py-16 px-4 lg:px-10">
+            <h4 class="text-[40px] font-bold text-white text-center mt-6">Where Do You Need Attention?</h4>
+            <p class="text-lg font-medium text-white text-center mt-6">We understand that injuries and acute pain can
+                happen
+                unexpectedly. Our emergency physiotherapy services
+                are designed to <br class="lg:block hidden">
+                provide prompt and affective care to help you manage.</p>
+            <div class=" grid grid-cols-1 lg:grid-cols-3 gap-x-16 gap-y-6 mt-10">
+                <div class="flex items-center gap-x-4 border-b border-white py-4">
+                    <img src="./assets/images/sec-eight-icon1.png" class="h-12 w-fit" alt="sec-eight-icon1">
+                    <span class="text-xl font-medium text-white">Low back pain</span>
+                </div>
+                <div class="flex items-center gap-x-4 border-b border-white py-4">
+                    <img src="./assets/images/sec-eight-icon2.png" class="h-12 w-fit" alt="sec-eight-icon2">
+                    <span class="text-xl font-medium text-white">Shoulder pain</span>
+                </div>
+                <div class="flex items-center gap-x-4 border-b border-white py-4">
+                    <img src="./assets/images/sec-eight-icon3.png" class="h-12 w-fit" alt="sec-eight-icon3">
+                    <span class="text-xl font-medium text-white">Sciatica</span>
+                </div>
+                <div class="flex items-center gap-x-4 border-b border-white py-4">
+                    <img src="./assets/images/sec-eight-icon4.png" class="h-12 w-fit" alt="sec-eight-icon4">
+                    <span class="text-xl font-medium text-white">Cervical Problem</span>
+                </div>
+                <div class="flex items-center gap-x-4 border-b border-white py-4">
+                    <img src="./assets/images/sec-eight-icon5.png" class="h-12 w-fit" alt="sec-eight-icon5">
+                    <span class="text-xl font-medium text-white">Pre Natal & post Natal exercises</span>
+                </div>
+                <div class="flex items-center gap-x-4 border-b border-white py-4">
+                    <img src="./assets/images/sec-eight-icon6.png" class="h-12 w-fit" alt="sec-eight-icon6">
+                    <span class="text-xl font-medium text-white">Cerebral palsy</span>
+                </div>
+                <div class="flex items-center gap-x-4 border-b border-white py-4">
+                    <img src="./assets/images/sec-eight-icon7.png" class="h-12 w-fit" alt="sec-eight-icon7">
+                    <span class="text-xl font-medium text-white">Stroke</span>
+                </div>
+                <div class="flex items-center gap-x-4 border-b border-white py-4">
+                    <img src="./assets/images/sec-eight-icon8.png" class="h-12 w-fit" alt="sec-eight-icon8">
+                    <span class="text-xl font-medium text-white">Ankle pain</span>
+                </div>
+                <div class="flex items-center gap-x-4 border-b border-white py-4">
+                    <img src="./assets/images/sec-eight-icon9.png" class="h-12 w-fit" alt="sec-eight-icon9">
+                    <span class="text-xl font-medium text-white">Post Surgical Rehabilitation</span>
+                </div>
+                <div class="flex items-center gap-x-4 border-b border-white py-4">
+                    <img src="./assets/images/sec-eight-icon10.png" class="h-12 w-fit" alt="sec-eight-icon10">
+                    <span class="text-xl font-medium text-white">Knee pain/ Osteoarthritis</span>
+                </div>
+                <div class="flex items-center gap-x-4 border-b border-white py-4">
+                    <img src="./assets/images/sec-eight-icon11.png" class="h-12 w-fit" alt="sec-eight-icon11">
+                    <span class="text-xl font-medium text-white">Fracture cases</span>
+                </div>
+                <div class="flex items-center gap-x-4 border-b border-white py-4">
+                    <img src="./assets/images/sec-eight-icon12.png" class="h-12 w-fit" alt="sec-eight-icon12">
+                    <span class="text-xl font-medium text-white">Fitness Program & Conditioning</span>
+                </div>
+
+            </div>
+            <div class="flex flex-col lg:flex-row justify-center mt-6">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-x-4 lg:gap-x-16 gap-y-6">
+                    <div class="flex items-center gap-x-4 border-b border-white py-4">
+                        <img src="./assets/images/sec-eight-icon13.png" class="h-12 w-fit" alt="sec-eight-icon13">
+                        <span class="text-xl font-medium text-white">Sports injury</span>
+                    </div>
+                    <div class="flex items-center gap-x-4 border-b border-white py-4">
+                        <img src="./assets/images/sec-eight-icon14.png" class="h-12 w-fit" alt="sec-eight-icon14">
+                        <span class="text-xl font-medium text-white">Neurological conditions</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- End of Section Eight -->
+
+    <!-- Section Nine -->
+
+    <div class="container mx-auto mt-6 lg:mt-28">
+        <h4 class="text-3xl lg:text-5xl font-normal text-black text-center lg:leading-16">Why customers love<br
+                class="hidden lg:block"> <span class="font-semibold text-[#0E9AA7]">Working with us</span></h4>
+
+        <div class="max-w-full lg:max-w-5xl mx-auto pt-4 lg:pt-16">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-x-16 gap-y-6 items-center">
+                <div class="flex justify-center">
+                    <img src="./assets/images/sec-nine-img.png" class="h-3/6 w-fit" alt="sec-nine-img">
+                </div>
+                <div class="flex flex-col justify-center h-full">
+                    <div class="owl-carousel" id="owl-carousel2">
+                        <div class="item flex flex-col gap-y-6 items-center bg-[#E7F5F6] rounded-4xl p-6 mx-4">
+                            <img src="./assets/images/sec-nine-pro-pic.png" class="h-16 w-[fit-content!important]"
+                                alt="sec-nine-pro-pic">
+
+                            <p class="text-base font-medium text-[#0B747D]">“ I was struggling with severe shoulder pain
+                                <br class="lg:block hidden">
+                                for months. After just a few sessions, the relief <br class="lg:block hidden">
+                                was unbelievable. The therapists are kind, <br class="lg:block hidden">
+                                knowledgeable, and truly care ”
+                            </p>
+                            <span class="text-3xl font-semibold text-[#0E9AA7] text-center font-montagu">Anjali</span>
+                            <p class="text-base font-light text-[#0E9AA7] text-center">Software Engineer</p>
+                        </div>
+                        <div class="item flex flex-col gap-y-6 items-center bg-[#E7F5F6] rounded-4xl p-6 mx-4">
+                            <img src="./assets/images/sec-nine-pro-pic.png" class="h-16 w-[fit-content!important]"
+                                alt="sec-nine-pro-pic">
+
+                            <p class="text-base font-medium text-[#0B747D]">“ I was struggling with severe shoulder pain
+                                <br class="lg:block hidden">
+                                for months. After just a few sessions, the relief <br class="lg:block hidden">
+                                was unbelievable. The therapists are kind, <br class="lg:block hidden">
+                                knowledgeable, and truly care ”
+                            </p>
+                            <span class="text-3xl font-semibold text-[#0E9AA7] text-center font-montagu">Anjali</span>
+                            <p class="text-base font-light text-[#0E9AA7] text-center">Software Engineer</p>
+                        </div>
+                        <div class="item flex flex-col gap-y-6 items-center bg-[#E7F5F6] rounded-4xl p-6 mx-4">
+                            <img src="./assets/images/sec-nine-pro-pic.png" class="h-16 w-[fit-content!important]"
+                                alt="sec-nine-pro-pic">
+
+                            <p class="text-base font-medium text-[#0B747D]">“ I was struggling with severe shoulder pain
+                                <br class="lg:block hidden">
+                                for months. After just a few sessions, the relief <br class="lg:block hidden">
+                                was unbelievable. The therapists are kind, <br class="lg:block hidden">
+                                knowledgeable, and truly care ”
+                            </p>
+                            <span class="text-3xl font-semibold text-[#0E9AA7] text-center font-montagu">Anjali</span>
+                            <p class="text-base font-light text-[#0E9AA7] text-center">Software Engineer</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- End of Section Nine -->
+
+    <!-- Section Ten -->
+
+    <div class="container mx-auto mt-6 lg:mt-28">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-x-6">
+            <div class="pl-20 py-20 max-sm:p-6">
+                <h5 class="text-3xl lg:text-5xl font-bold text-black max-sm:text-center">Get in <span
+                        class="text-[#0E9AA7]">Touch</span></h5>
+                <span class="inline-block text-sm font-semibold text-black pt-8">Get in touch with us for
+                    appointments & inquiries</span>
+                <form class="flex flex-col gap-y-6 mt-10">
+                    <input type="text" name="name" id="name"
+                        class="py-3.5 px-2 focus-within:outline-[#0E9AA7] border border-[#E0E0E0]" placeholder="Name *">
+                    <input type="email" name="email" id="email"
+                        class="py-3.5 px-2 focus-within:outline-[#0E9AA7] border border-[#E0E0E0]" placeholder="Email">
+                    <input type="number" name="phone" id="phone"
+                        class="py-3.5 px-2 focus-within:outline-[#0E9AA7] border border-[#E0E0E0]"
+                        placeholder="Phone number *">
+                    <button
+                        class="text-base font-bold bg-[#0E9AA7] text-white py-3.5 px-4 hover:bg-transparent hover:text-[#0E9AA7] border border-[#0E9AA7] transition-all ease-in-out duration-300 cursor-pointer">SEND</button>
+                </form>
+                <div class="flex flex-col lg:flex-row gap-y-4 justify-between mt-6 lg:mt-12">
+                    <div class="flex gap-x-2 items-center">
+                        <img src="./assets/images/dailer-icon.svg" class="h-8 w-fit" alt="dailer-icon">
+                        <div>
+                            <p class="text-sm font-semibold text-black">WORK</p>
+                            <a href="#0" class="text-base font-medium text-[#0E9AA7]"><span
+                                    class="text-black">+91</span> 6381687325</a>
+                        </div>
+                    </div>
+                    <div class="flex gap-x-2 items-center">
+                        <img src="./assets/images/dailer-icon.svg" class="h-8 w-fit" alt="dailer-icon">
+                        <div>
+                            <p class="text-sm font-semibold text-black">MOBILE</p>
+                            <a href="#0" class="text-base font-medium text-[#0E9AA7]"><span
+                                    class="text-black">+91</span> 6381687325</a>
+                        </div>
+                    </div>
+                    <div class="flex gap-x-2 items-center">
+                        <img src="./assets/images/mail-icon.svg" class="h-8 w-fit" alt="mail-icon">
+                        <div>
+                            <p class="text-sm font-semibold text-black">EMAIL</p>
+                            <a href="#0" class="text-base font-medium text-[#0E9AA7]">movementmaneuver@gmail.com</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="flex justify-center items-center bg-[linear-gradient(90deg,rgba(255,255,255,1)_50%,rgba(180,224,228,1)_50%)] p-10 lg:p-20 lg:rounded-e-3xl">
+                <img src="./assets/images/sec-ten-img.png" class="w-10/12" alt="sec-ten-img">
+            </div>
+        </div>
+    </div>
+
+    <!-- End of Section Ten -->
+
+    <!-- Section Eleven -->
+
+    <div class="container mx-auto px-6 mt-6 lg:my-28">
+
+        <h5 class="text-3xl lg:text-5xl font-bold text-black text-center">Frequently Asked <span
+                class="text-[#0E9AA7]">Questions</span></h5>
+        <p class="text-sm font-semibold text-[#868686] text-center mt-8">Physiotherapists, also Known as physical
+            therapists,
+            are professionals <br class="lg:block hidden">
+            who specialize optimizing physical function and mobility.</p>
+
+        <div class="flex flex-col gap-y-6 mt-16">
+            <!-- Accordion Item 1 -->
+            <div class="max-w-3xl mx-auto">
+                <input type="checkbox" id="accordion-1" class="peer hidden">
+                <label for="accordion-1"
+                    class="flex justify-between items-center p-4 cursor-pointer bg-white rounded-md shadow-[0px_0px_8px_0px_rgba(0,0,0,0.25)] text-[#07544b] font-medium">
+                    <span class="text-lg max-sm:text-lg font-medium text-black font-family-lora">1. Do I need a doctor’s
+                        referral to start physiotherapy?
+                    </span>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 42 42"
+                        class="w-8 h-8 transition-transform duration-300 peer-checked:rotate-180" fill="none">
+                        <circle cx="21" cy="21" r="20.5" transform="rotate(90 21 21)" stroke="#0E9AA7" />
+                        <path d="M21 14.875V27.125M21 27.125L27.125 21M21 27.125L14.875 21" stroke="#0E9AA7"
+                            stroke-width="1.16667" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </label>
+                <div
+                    class="bg-[#EDF9F7] overflow-hidden rounded-md max-h-0 peer-checked:max-h-96 transition-all duration-300 px-4 mt-2">
+                    <p class="py-4 text-base text-black font-family-lora">Lorem ipsum, dolor sit amet consectetur
+                        adipisicing elit. Recusandae eos impedit nulla id quos ducimus corrupti tempora facere
+                        perferendis maiores earum, consequuntur deserunt suscipit, commodi enim minima, ea deleniti sit!
+                    </p>
+                </div>
+            </div>
+
+            <!-- Accordion Item 2 -->
+            <div class="max-w-3xl mx-auto">
+                <input type="checkbox" id="accordion-2" class="peer hidden">
+                <label for="accordion-2"
+                    class="flex justify-between items-center p-4 cursor-pointer bg-white rounded-md shadow-[0px_0px_8px_0px_rgba(0,0,0,0.25)] text-[#07544b] font-medium">
+                    <span class="text-lg max-sm:text-lg font-medium text-black font-family-lora">2. What should I wear
+                        for
+                        my physiotherapy session?
+                    </span>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 42 42"
+                        class="w-8 h-8 transition-transform duration-300 peer-checked:rotate-180" fill="none">
+                        <circle cx="21" cy="21" r="20.5" transform="rotate(90 21 21)" stroke="#0E9AA7" />
+                        <path d="M21 14.875V27.125M21 27.125L27.125 21M21 27.125L14.875 21" stroke="#0E9AA7"
+                            stroke-width="1.16667" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </label>
+                <div
+                    class="bg-[#EDF9F7] overflow-hidden rounded-md max-h-0 peer-checked:max-h-96 transition-all duration-300 px-4 mt-2">
+                    <p class="py-4 text-base text-black font-family-lora">Lorem ipsum, dolor sit amet consectetur
+                        adipisicing elit. Recusandae eos impedit nulla id quos ducimus corrupti tempora facere
+                        perferendis maiores earum, consequuntur deserunt suscipit, commodi enim minima, ea deleniti sit!
+                    </p>
+                </div>
+            </div>
+
+            <!-- Accordion Item 3 -->
+            <div class="max-w-3xl mx-auto">
+                <input type="checkbox" id="accordion-3" class="peer hidden">
+                <label for="accordion-3"
+                    class="flex justify-between items-center p-4 cursor-pointer bg-white rounded-md shadow-[0px_0px_8px_0px_rgba(0,0,0,0.25)] text-[#07544b] font-medium">
+                    <span class="text-lg max-sm:text-lg font-medium text-black font-family-lora">3. How many sessions
+                        will I need?
+                    </span>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 42 42"
+                        class="w-8 h-8 transition-transform duration-300 peer-checked:rotate-180" fill="none">
+                        <circle cx="21" cy="21" r="20.5" transform="rotate(90 21 21)" stroke="#0E9AA7" />
+                        <path d="M21 14.875V27.125M21 27.125L27.125 21M21 27.125L14.875 21" stroke="#0E9AA7"
+                            stroke-width="1.16667" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </label>
+                <div
+                    class="bg-[#EDF9F7] overflow-hidden rounded-md max-h-0 peer-checked:max-h-96 transition-all duration-300 px-4 mt-2">
+                    <p class="py-4 text-base text-black font-family-lora">Lorem ipsum, dolor sit amet consectetur
+                        adipisicing elit. Recusandae eos impedit nulla id quos ducimus corrupti tempora facere
+                        perferendis maiores earum, consequuntur deserunt suscipit, commodi enim minima, ea deleniti sit!
+                    </p>
+                </div>
+            </div>
+
+            <!-- Accordion Item 4 -->
+            <div class="max-w-3xl mx-auto">
+                <input type="checkbox" id="accordion-4" class="peer hidden">
+                <label for="accordion-4"
+                    class="flex justify-between items-center p-4 cursor-pointer bg-white rounded-md shadow-[0px_0px_8px_0px_rgba(0,0,0,0.25)] text-[#07544b] font-medium">
+                    <span class="text-lg max-sm:text-lg font-medium text-black font-family-lora">4. Do you offer home
+                        physiotherapy services?
+                    </span>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 42 42"
+                        class="w-8 h-8 transition-transform duration-300 peer-checked:rotate-180" fill="none">
+                        <circle cx="21" cy="21" r="20.5" transform="rotate(90 21 21)" stroke="#0E9AA7" />
+                        <path d="M21 14.875V27.125M21 27.125L27.125 21M21 27.125L14.875 21" stroke="#0E9AA7"
+                            stroke-width="1.16667" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </label>
+                <div
+                    class="bg-[#EDF9F7] overflow-hidden rounded-md max-h-0 peer-checked:max-h-96 transition-all duration-300 px-4 mt-2">
+                    <p class="py-4 text-base text-black font-family-lora">Lorem ipsum, dolor sit amet consectetur
+                        adipisicing elit. Recusandae eos impedit nulla id quos ducimus corrupti tempora facere
+                        perferendis maiores earum, consequuntur deserunt suscipit, commodi enim minima, ea deleniti sit!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- End of Section Eleven -->
+
+    <!-- Details Bar -->
+
+    <div class="container mx-auto">
+        <div class="flex flex-col md:flex-row lg:flex-row justify-between px-6 py-8 gap-y-6 bg-[#E1F4F0]">
+            <p class="text-xl max-sm:text-base font-semibold text-black">Book Appointment: <span
+                    class="font-medium">(+91)
+                    6381687325</span></p>
+            <p class="text-xl max-sm:text-base font-semibold text-black">Working Hours: <span class="font-medium">Mon to
+                    Sat : 09:00 To
+                    1:00 & 4:00 To 8:00</span></p>
+        </div>
+    </div>
+
+    <!-- End of Details Bar -->
+
+    <!-- Footer -->
+
+    <footer class="bg-[#06454B]">
+        <div class="container mx-auto px-6 sm:px-10 lg:px-20">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-10 gap-x-8 py-16">
+                <!-- Logo and Address -->
+                <div class="flex flex-col gap-y-6">
+                    <a href="./index.html" class="flex items-center gap-x-3">
+                        <img src="./assets/images/maneuver-logo.png" class="h-12" alt="maneuver-logo">
+                        <h6 class="text-base font-bold text-white whitespace-nowrap">Movement Maneuver</h6>
+                    </a>
+                    <a href="#0" class="text-base font-normal text-[#CFD3D7]">
+                        36, LB Shastri Nagar, Zia Building <br class="hidden sm:block">
+                        Near Apollo Pharmacy, Bengaluru-17
+                    </a>
+                </div>
+
+                <!-- About Us Links -->
+                <div class="flex flex-col gap-y-4">
+                    <h6 class="text-base font-bold text-white mb-2">About Us</h6>
+                    <a href="#0"
+                        class="text-base font-medium text-[#CFD3D7] hover:text-white transition duration-200">Service</a>
+                    <a href="#0"
+                        class="text-base font-medium text-[#CFD3D7] hover:text-white transition duration-200">Features</a>
+                    <a href="#0"
+                        class="text-base font-medium text-[#CFD3D7] hover:text-white transition duration-200">Our
+                        Team</a>
+                    <a href="#0"
+                        class="text-base font-medium text-[#CFD3D7] hover:text-white transition duration-200">Contact
+                        Us</a>
+                    <a href="#0"
+                        class="text-base font-medium text-[#CFD3D7] hover:text-white transition duration-200">FAQ</a>
+                </div>
+
+                <!-- Newsletter and Social Icons -->
+                <div class="flex flex-col">
+                    <h6 class="text-base font-bold text-white mb-4">Join a Newsletter</h6>
+                    <label for="email" class="text-base font-normal text-[#CFD3D7]">Your Email</label>
+                    <div class="flex flex-col sm:flex-row gap-4 mt-4">
+                        <input type="email" name="sub_email" id="sub_email"
+                            class="flex-1 py-3.5 px-6 bg-[#4F5A68] text-white placeholder:text-[#77808B] border border-[#0E9AA7] focus-visible:outline-0"
+                            placeholder="Enter Your Email">
+                        <button
+                            class="bg-[#0E9AA7] text-white px-6 py-3.5 hover:bg-transparent border border-[#0E9AA7] transition duration-300">
+                            Subscribe
+                        </button>
+                    </div>
+                    <div class="flex items-center max-sm:justify-center gap-x-6 mt-6">
+                        <a href="#"><img src="./assets/images/fb-icon.svg" class="h-8" alt="fb-icon"></a>
+                        <a href="#"><img src="./assets/images/insta-icon.svg" class="h-8" alt="insta-icon"></a>
+                        <a href="#"><img src="./assets/images/x-icon.svg" class="h-8" alt="x-icon"></a>
+                        <a href="#"><img src="./assets/images/yt-icon.svg" class="h-8" alt="yt-icon"></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Divider -->
+            <div>
+                <hr class="h-0.5 bg-[#0E9AA7] mt-10">
+            </div>
+
+            <!-- Bottom Footer Info -->
+            <div class="flex flex-col lg:flex-row flex-wrap justify-between items-center gap-y-6 py-9">
+                <span class="text-base font-normal text-[#CFD3D7] text-center lg:text-left">© 2025 Movement Maneuver.
+                    All rights reserved.</span>
+
+                <div class="flex items-start gap-x-2 text-center sm:text-left">
+                    <img src="./assets/images/location-icon.svg" class="h-6 mt-1" alt="location-icon">
+                    <a href="#0" class="text-base font-normal text-[#CFD3D7]">36, LB Shastri Nagar, Zia Building <br
+                            class="hidden sm:block">Near Apollo Pharmacy, Bengaluru-17</a>
+                </div>
+
+                <div class="flex items-center gap-x-2">
+                    <img src="./assets/images/comm-icon.svg" class="h-6" alt="comm-icon">
+                    <a href="#0" class="text-base font-normal text-[#CFD3D7]">movementmaneuver@gmail.com</a>
+                </div>
+
+                <div class="flex items-center gap-x-2">
+                    <img src="./assets/images/call-icon.svg" class="h-6" alt="call-icon">
+                    <a href="#0" class="text-base font-normal text-[#CFD3D7]">(+91) 6381687325</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- End of Footer -->
+
+</body>
+
+<!-- npx @tailwindcss/cli -i ./src/input.css -o ./src/output.css --watch -->
+
+<!-- Owl Carousel JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+<!-- JS Assets -->
+<script src="./assets/js/script.js"></script>
+
+</html>
