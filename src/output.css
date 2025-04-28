@@ -1001,6 +1001,11 @@
       margin-top: calc(var(--spacing) * 10);
     }
   }
+  .max-sm\:mb-6 {
+    @media (width < 40rem) {
+      margin-bottom: calc(var(--spacing) * 6);
+    }
+  }
   .max-sm\:block {
     @media (width < 40rem) {
       display: block;
