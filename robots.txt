@@ -1,0 +1,7 @@
+# robots.txt for movementmaneuver
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://movementmaneuver.in/sitemap.xml
